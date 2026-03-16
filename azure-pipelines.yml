@@ -23,10 +23,16 @@ steps:
 
 - task: SonarQubePrepare@8
   inputs:
-    SonarQube: 'sq20254'
+    SonarQube: 'latest'
     scannerMode: 'dotnet'
     projectKey: 'ConsoleApp107'
     projectName: 'ConsoleApp107'
+    extraProperties: |
+      # Additional properties that will be passed to the scanner, 
+      # Put one key=value per line, example:
+      # sonar.exclusions=**/*.bin
+      sonar.verbose=true
+
 
 - task: VSBuild@1
   inputs:
