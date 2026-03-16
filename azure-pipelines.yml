@@ -42,11 +42,13 @@ steps:
     configuration: '$(buildConfiguration)'
 
 
-- task: SonarQubeAnalyze@8
-  inputs:
-    jdkversion: 'JAVA_HOME_17_X64'
-
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+
+
+- task: SonarQubeAnalyze@8
+  inputs:
+    jdkversion: 'JAVA_HOME_17_X64'
